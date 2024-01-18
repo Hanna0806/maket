@@ -19,6 +19,7 @@ html {
     line-height: 1.95rem;
     padding: 16px 32px;
     cursor: pointer;
+    white-space: nowrap;
 }
 
 .btn:active {
@@ -106,7 +107,7 @@ html {
     align-items: center;
 }
 
-.header__list-item + .header__list-item::before {
+.header__list-item+.header__list-item::before {
     content: '';
     display: block;
     width: 0.4rem;
@@ -115,8 +116,7 @@ html {
     margin: 0 40px;
 }
 
-.link:visited {
-}
+.link:visited {}
 
 .link:focus {
     outline: none;
@@ -130,6 +130,60 @@ html {
 .link:active {
     color: navy;
 }
+
+
+
+
+/* Бургер */
+
+.burger {
+    /* display: none; */
+    cursor: pointer;
+}
+
+.burger__container {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    /* background-color: aqua; */
+    /* position: relative; */
+}
+
+.burger__line {
+    /* position: absolute; */
+    width: 31px;
+    height: 3px;
+    background-color: #EE3124;
+    display: block;
+    /* left: 5px;
+    top: 0; */
+}
+
+/* .burger__line:nth-last-child(1) {
+    transform: translateY(-10px);
+}
+
+.burger__line:nth-last-child(3) {
+    transform: translateY(10px);
+} */
+
+#check-menu {
+    display: none;
+}
+
+.app-content-wrapper main-content-wrapper .main-content-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
 
 .logo {
     width: max-content;
@@ -462,7 +516,33 @@ html {
     transform: translateY(2px) rotate(-45deg) translateX(0px);
 }
 
-.vacancies-content-wrapper {
+
+.vacancies__wrapper {
+    margin-left: 80px;
+    margin-right: 80px;
+
+}
+
+.vacancies__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    border-bottom: 1px solid #E2E8F7;
+
+}
+
+.vacancies-item_info {
+    margin: 20px;
+}
+
+.vacancies-item__job {
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+}
+
+/* .vacancies-content-wrapper {
     padding-bottom: 80px;
     display: flex;
     flex-direction: column;
@@ -491,9 +571,50 @@ html {
 .vacancy-item__location {
     font-weight: 400;
     color: #7F7F7F;
+} */
+
+.footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    margin: 80px;
 }
 
-.footer-content-wrapper {
+/* .footer-part_top {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 50px;
+}  */
+
+
+.footer-part_top .text {
+    margin-bottom: 30px;
+}
+
+.footer-part_top .title_size_sm {
+    margin-bottom: 30px;
+}
+
+.form {
+    display: flex;
+    justify-content: space-evenly;
+    background: #24252E;
+    border-radius: 100px;
+    padding: 40px 80px;
+    gap: 40px;
+}
+
+.form input {
+    border-radius: 50px;
+    width: 20%;
+    padding: 12px 20px;
+    font-size: 1.6rem;
+
+}
+
+/* .footer-content-wrapper {
     padding-top: 80px;
     padding-bottom: 80px;
     display: flex;
@@ -516,10 +637,20 @@ html {
     width: 260px;
     padding: 12px 20px;
     border-radius: 50px;
+} */
+
+.burger {
+    display: none;
+    cursor: pointer;
 }
 
 
-.burger {
+
+
+
+
+
+/* .burger {
     display: none;
     cursor: pointer;
 }
@@ -568,39 +699,30 @@ html {
     height: 100%;
     position: absolute;
     opacity: 0
-}
+} */
 
-@media screen and (max-width: 1230px) {
-    .app-content-wrapper {
-        padding-left: 4.4rem;
-        padding-right: 4.4rem;
-    }
-
-    .header__list-item + .header__list-item::before {
-        margin: 0 30px;
-    }
-
-    .button_type_phone {
-        display: block;
+@media screen and (max-width: 880px) {
+    .main__info-container {
+        width: auto;
     }
 
     .header__btn {
         display: none;
     }
 
-    .main-content-wrapper {
-        flex-wrap: wrap;
-        justify-content: center;
+    .button_type_phone {
+        display: block;
     }
-
-}
-
-@media screen and (max-width: 1110px) {
 
     .button_type_phone {
         position: absolute;
-        right: 40px;
+        right: 70px;
         top: 20px;
+    }
+
+    .header__navigation {
+        display: flex;
+
     }
 
     .header-content-wrapper {
@@ -609,150 +731,136 @@ html {
         gap: 46px;
     }
 
+    .header__list {
+        width: 100%;
+    }
+
+    .header__list-item+.header__list-item::before {
+        margin: 0 20px;
+    }
+
     .advantage-content-wrapper {
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-        gap: 40px;
+        padding-top: 40px;
+        padding-bottom: 40px;
     }
 
-    .vacancies-content-wrapper {
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-        gap: 40px;
+    .vacancies__list {
+        display: block;
+    }
+
+    .vacancies__wrapper .btn_theme_secondary {
+        min-width: 33rem;
+    }
+
+    .vacancies-item_info_left {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
     }
 
     .comments-content-wrapper {
-        padding-top: 4rem;
-    }
-
-    .footer-content-wrapper {
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-        gap: 40px;
-    }
-
-    .form {
-        flex-direction: column;
-        max-width: 340px;
-        border-radius: 20px;
-        padding: 40px;
-        align-self: center;
-    }
-}
-
-
-@media screen and (max-width: 768px) {
-    .advantage-card-wrapper {
-        justify-content: center;
-    }
-
-    .vacancy-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-    }
-
-    .vacancy-item .btn {
-        width: 334px;
-    }
-
-    .comments-content-wrapper {
+        display: flex;
         flex-direction: column;
         align-items: center;
     }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form input {
+        min-width: 26rem;
+    }
+
+    .form .btn_theme_primary {
+        max-width: 25rem;
+    }
+
+    .main-content-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-part_botton {
+        margin: 0 auto;
+    }
 }
+
+
 
 @media screen and (max-width: 414px) {
     .app-content-wrapper {
         padding: 2rem;
     }
 
-    .title {
-        font-size: 3rem;
-        line-height: 3.6rem;
-    }
-
-    .main__text {
-        font-size: 1.8rem;
-        line-height: 2.2rem;
-    }
-
     .header__navigation {
         display: none;
-    }
-
-    .main__info-container {
-        gap: 20px;
-    }
-
-    .main__info-container .btn {
-        width: 100%;
-    }
-
-    .header-content-wrapper {
-        flex-direction: row;
-        align-items: center;
-        transition: .5s ease-in;
-    }
-
-    .header-content-wrapper:has(.burger__checkbox:checked) {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1;
-    }
-
-    .button_type_phone {
-        position: static;
     }
 
     .burger {
         display: block;
     }
 
-    .header-content-wrapper:has(.burger__checkbox:checked) {
-        background-color: #F6FCFF;
-    }
-
-    .header-content-wrapper:has(.burger__checkbox:checked) .header__navigation {
-        display: block;
-    }
-
-    .header-content-wrapper .header__navigation {
-        display: block;
-        position: fixed;
-        top: 80px;
+    .header__navigation {
+        position: absolute;
         left: 0;
-        bottom: 0;
-        right: 0;
-        background-color: #F6FCFF;
-        z-index: 1;
-        transform: translateX(-100%);
-        padding-top: 40px;
-        transition: 0.3s;
+        top: 0;
+        padding: 80px 20px 20px 20px;
     }
 
-    .header-content-wrapper:has(.burger__checkbox:checked) .header__navigation {
-        transform: translateX(0%);
-        transition: 0.3s;
-
-    }
-
-    .header-content-wrapper:has(.burger__checkbox:checked) .header__list-item::before {
-        content: '';
+    .header__list {
         display: block;
-        width: 0.4rem;
-        height: 0.4rem;
-        background-color: #EE3124;
-        margin: 0 13px 0 20px !important;
     }
 
-    .header-content-wrapper:has(.burger__checkbox:checked) .header__list {
+
+    .header-content-wrapper {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .button_type_phone {
+        position: static;
+    }
+
+    .vacancies__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .vacancies__wrapper .btn_theme_secondary {
+        display: block;
+        max-width: 100%;
+    }
+
+    .vacancies-item__location {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+    }
+
+    .vacancies__list {
+        display: flex;
         flex-direction: column;
+        /* justify-content: flex-start; */
         align-items: flex-start;
-        gap: 32px;
+    }
+    .vacancies__wrapper {
+        margin: 0;
+    }
+    .title_size_sm {
+        margin: 20px;
+        width: 100%;
+    }
+    .footer-wrapper {
+        margin: 2rem;
+    }
+    .form {
+        border-radius: 20px;
+        padding: 40px;
+        /* width: 20%;
+        padding: 12px 20px;
+        font-size: 1.6rem; */
+    
     }
 
 }
-
