@@ -120,7 +120,6 @@ html {
 
 .link:focus {
     outline: none;
-    /* outline: solid 10px red; */
 }
 
 .link:hover {
@@ -137,7 +136,6 @@ html {
 /* Бургер */
 
 .burger {
-    /* display: none; */
     cursor: pointer;
 }
 
@@ -149,27 +147,15 @@ html {
     justify-content: center;
     align-items: center;
     gap: 6px;
-    /* background-color: aqua; */
-    /* position: relative; */
 }
 
 .burger__line {
-    /* position: absolute; */
     width: 31px;
     height: 3px;
     background-color: #EE3124;
-    display: block;
-    /* left: 5px;
-    top: 0; */
 }
 
-/* .burger__line:nth-last-child(1) {
-    transform: translateY(-10px);
-}
 
-.burger__line:nth-last-child(3) {
-    transform: translateY(10px);
-} */
 
 #check-menu {
     display: none;
@@ -178,6 +164,10 @@ html {
 .app-content-wrapper main-content-wrapper .main-content-wrapper {
     display: flex;
     flex-direction: column;
+}
+.burger {
+    display: none;
+    cursor: pointer;
 }
 
 
@@ -542,36 +532,6 @@ html {
     line-height: 2.2rem;
 }
 
-/* .vacancies-content-wrapper {
-    padding-bottom: 80px;
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-}
-
-
-.vacancy-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    border-bottom: 1px solid #E2E8F7;
-}
-
-.vacancy-item__info-wrapper {
-    font-size: 1.8rem;
-    line-height: 2.2rem;
-}
-
-.vacancy-item__job {
-    font-weight: 600;
-    margin-bottom: 12px;
-}
-
-.vacancy-item__location {
-    font-weight: 400;
-    color: #7F7F7F;
-} */
 
 .footer-wrapper {
     display: flex;
@@ -580,13 +540,6 @@ html {
     padding-bottom: 80px;
     margin: 80px;
 }
-
-/* .footer-part_top {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    margin-bottom: 50px;
-}  */
 
 
 .footer-part_top .text {
@@ -614,92 +567,9 @@ html {
 
 }
 
-/* .footer-content-wrapper {
-    padding-top: 80px;
-    padding-bottom: 80px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    border-radius: 100px;
-    padding: 40px 77px;
-    background: #24252E;
-}
-
-.form input {
-    outline: none;
-    width: 260px;
-    padding: 12px 20px;
-    border-radius: 50px;
-} */
-
-.burger {
-    display: none;
-    cursor: pointer;
-}
 
 
 
-
-
-
-
-/* .burger {
-    display: none;
-    cursor: pointer;
-}
-
-.burger__container {
-    width: 31px;
-    height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    position: relative;
-}
-
-
-.burger__line {
-    height: 3px;
-    width: 31px;
-    background-color: #EE3124;
-}
-
-.burger__line::after,
-.burger__line:before {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 31px;
-    height: 3px;
-    background-color: #EE3124;
-}
-
-.burger__line::after {
-    top: 0;
-    left: 0;
-    transform: translateY(100%);
-}
-
-.burger__line:before {
-    bottom: 0;
-    left: 0;
-    transform: translateY(-100%);
-}
-
-.burger__checkbox {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    opacity: 0
-} */
 
 @media screen and (max-width: 880px) {
     .main__info-container {
@@ -722,7 +592,6 @@ html {
 
     .header__navigation {
         display: flex;
-
     }
 
     .header-content-wrapper {
@@ -793,19 +662,18 @@ html {
         padding: 2rem;
     }
 
-    .header__navigation {
-        display: none;
-    }
-
     .burger {
         display: block;
     }
 
     .header__navigation {
+        display: none;
         position: absolute;
         left: 0;
-        top: 0;
-        padding: 80px 20px 20px 20px;
+        top: 80px;
+        padding: 20px;
+        background: #fff;
+        min-height: calc(100vh - 80px);
     }
 
     .header__list {
@@ -841,7 +709,6 @@ html {
     .vacancies__list {
         display: flex;
         flex-direction: column;
-        /* justify-content: flex-start; */
         align-items: flex-start;
     }
     .vacancies__wrapper {
@@ -857,10 +724,19 @@ html {
     .form {
         border-radius: 20px;
         padding: 40px;
-        /* width: 20%;
-        padding: 12px 20px;
-        font-size: 1.6rem; */
-    
+    }
+
+    .header-content-wrapper:has(#check-menu:checked) .header__navigation {
+        display: block;
+    }
+
+    .header__list-item::before {
+        content: '';
+        display: block;
+        width: 0.4rem;
+        height: 0.4rem;
+        background-color: #EE3124;
+        margin: 0 20px;
     }
 
 }
